@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+  <property name="LOG_HOME" value="/home/vbiso/logs"></property>
+
+  <contextName>vbiso-log</contextName>
+
+  <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - [%method,%line] - %msg%n</pattern>
+    </encoder>
+    <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+    <!--<FileNamePattern>${LOG_HOME}/vbiso-dao.log.%d{yyyy-MM-dd}.log</FileNamePattern>-->
+    <!--</rollingPolicy>-->
+    <!--<layout class="ch.qos.logback.classic.PatternLayout">-->
+    <!--<pattern>%d{yyyy-MM-dd HH:mm:ss} %contextName [%thread] %-5level %logger{50} -%msg%n</pattern>-->
+    <!--</layout>-->
+  </appender>
+
+  <appender name="DailyRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <FileNamePattern>${LOG_HOME}/vbiso-service.log.%d{yyyy-MM-dd}.log</FileNamePattern>
+      <MaxHistory>30</MaxHistory>
+    </rollingPolicy>
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} %contextName [%thread] %-5level %logger{50} - %msg%n</pattern>
+    </layout>
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <MaxFileSize>100MB</MaxFileSize>
+    </triggeringPolicy>
+  </appender>
+
+
+  <appender name="AspectDailyRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <FileNamePattern>${LOG_HOME}/vbiso-mysql.log.%d{yyyy-MM-dd}.log</FileNamePattern>
+      <MaxHistory>30</MaxHistory>
+    </rollingPolicy>
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} %contextName [%thread] %-5level %logger{50} - %msg%n</pattern>
+    </layout>
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <MaxFileSize>100MB</MaxFileSize>
+    </triggeringPolicy>
+  </appender>
+
+
+  <root level="INFO">
+    <appender-ref ref="consoleLog"/>
+  </root>
+
+  <logger name="com.vbiso.appect.SystemLogAop" level="INFO" additivity="false">
+    <appender-ref ref="AspectDailyRollingFile"/>
+  </logger>
+
+
+  <logger name="com.vbiso.service" level="INFO" additivity="false">
+    <appender-ref ref="DailyRollingFile"/>
+  </logger>
+
+
+
+</configuration>
