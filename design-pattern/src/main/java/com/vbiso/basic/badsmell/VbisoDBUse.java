@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * @Author: wenliujie
@@ -37,6 +38,7 @@ public class VbisoDBUse {
   private static final String URL = "jdbc:mysql://39.105.5.165:3306/vbiso?useUnicode=true&characterEncoding=utf8&useSSL=false";
 
 
+  @Nullable
   public static Connection getConnection() {
     try {
       Class.forName("com.mysql.jdbc.Driver");
@@ -63,6 +65,7 @@ public class VbisoDBUse {
     }
   }
 
+  @Nullable
   public static int excuteInsertSql(Connection connection, VbisoDBUse vbisoDBUse, String sql) {
     PreparedStatement statement = null;
     try {
@@ -79,6 +82,7 @@ public class VbisoDBUse {
     }
     return -1;
   }
+
 
 
   public String getUserName() {

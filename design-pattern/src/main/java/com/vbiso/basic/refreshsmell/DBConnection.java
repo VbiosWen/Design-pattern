@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @Author: wenliujie
  * @Description:
+ * 1.负责数据库连接
  * @Date: Created in 上午10:20 2018/7/6
  * @Modified By:
  */
@@ -53,6 +54,10 @@ public class DBConnection {
     } catch (SQLException e) {
       log.error("db source close error:",e);
     }
+  }
+
+  public static void main(String[] args){
+    getConnection();
   }
 
 }
