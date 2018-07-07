@@ -1,4 +1,4 @@
-package com.vbiso.basic.badsmell.singularityprinciple;
+package com.vbiso.basic.badsmell.srp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package com.vbiso.basic.refreshsmell.singularityprinciple;
+package com.vbiso.basic.refreshsmell.srp;
 
 
 /**

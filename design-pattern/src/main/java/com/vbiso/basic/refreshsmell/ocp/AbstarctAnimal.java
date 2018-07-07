@@ -1,4 +1,4 @@
-package com.vbiso.basic.refreshsmell.openingandclosingprinciple;
+package com.vbiso.basic.refreshsmell.ocp;
 
 /**
  * @Author: wenliujie

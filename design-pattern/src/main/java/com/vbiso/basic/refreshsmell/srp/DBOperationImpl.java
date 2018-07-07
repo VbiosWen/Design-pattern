@@ -1,4 +1,4 @@
-package com.vbiso.basic.refreshsmell.singularityprinciple;
+package com.vbiso.basic.refreshsmell.srp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

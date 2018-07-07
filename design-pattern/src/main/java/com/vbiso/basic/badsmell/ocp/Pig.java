@@ -1,4 +1,4 @@
-package com.vbiso.basic.badsmell.openingandclosingprinciple;
+package com.vbiso.basic.badsmell.ocp;
 
 /**
  * @Author: wenliujie
