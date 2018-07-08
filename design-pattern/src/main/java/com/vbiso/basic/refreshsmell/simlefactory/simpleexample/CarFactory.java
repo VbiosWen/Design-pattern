@@ -1,4 +1,4 @@
-package com.vbiso.basic.refreshsmell.simlefactory;
+package com.vbiso.basic.refreshsmell.simlefactory.simpleexample;
 
 /**
  * @Author: wenliujie
@@ -19,10 +19,10 @@ public class CarFactory {
   }
 
   public static void main(String[] args) {
-    making("audi");
-    making("bmw");
-    int big=0b1_1111_11;
-    System.out.println(big);
+    Product audi = making("audi");
+    Product bmw = making("bmw");
   }
+
+
 
 }

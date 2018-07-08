@@ -14,4 +14,5 @@ public interface DBOperation<T> {
 
   int insertSql(T entity,String sql);
 
+
 }

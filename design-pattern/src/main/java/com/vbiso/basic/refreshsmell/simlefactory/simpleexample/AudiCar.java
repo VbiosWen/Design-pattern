@@ -1,4 +1,4 @@
-package com.vbiso.basic.refreshsmell.simlefactory;
+package com.vbiso.basic.refreshsmell.simlefactory.simpleexample;
 
 /**
  * @Author: wenliujie
