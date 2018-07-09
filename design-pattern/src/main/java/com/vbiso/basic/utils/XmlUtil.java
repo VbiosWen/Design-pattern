@@ -1,6 +1,5 @@
 package com.vbiso.basic.utils;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.parsers.DocumentBuilder;
@@ -41,6 +40,34 @@ public class XmlUtil {
       log.error("未找到对应的配置文件",e);
     }
     return type;
+  }
+
+  public static Object getBean(){
+    try {
+      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+      InputStream re = xmlUtil.getClass().getResourceAsStream("/className.xml");
+      DocumentBuilder documentBuilder = factory.newDocumentBuilder();
+      Document document = documentBuilder.parse(re);
+      NodeList nodeList = document.getElementsByTagName("className");
+      Node node = nodeList.item(0).getFirstChild();
+      String trim = node.getNodeValue().trim();
+      Class<?> aClass = Class.forName(trim);
+      Object o = aClass.newInstance();
+      return o;
+    } catch (ParserConfigurationException e) {
+      log.error("get xml object error :",e);
+    } catch (SAXException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (ClassNotFoundException e) {
+
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    } catch (InstantiationException e) {
+      e.printStackTrace();
+    }
+    return null;
   }
 
   public static void main(String[] args){
