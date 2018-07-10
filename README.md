@@ -15,38 +15,17 @@ java设计模式学习以及个人理解
 ### 6.合成复用原则(CRP)
  合成复用原则定义为尽量使用对象组合而不是继承来达到复用的目的。尽量使用对象组合而不是继承并不是说都用对象组合，我们在考虑合成复用原则的时候要根据对象之间的关系确定，如果对象之间是Has-A关系，则用对象组合，如果Is-A的关系，则采用继承的方式。继承一个非常大的缺点就是如果基类发生改变，子类的实现不得不发生改变，没有足够的灵活性。
 ### 7.迪米特法则
- 迪米特法则的定义为一个软件实体应尽可能少地与其他实体发生相互作用。在此规则下，各个实体之间相互关联就很少了，能使系统遵循低耦合的规则。迪米特法则有一下几点规则，对于一个对象，其朋友包含一下几类:
-   1.当前对象本身(this)
-   2.以参数形式传入到当前方法中的对象
-   3.当前对象的成员对象
-   4.如果当前对象的成员对象是一个集合，那么集合内的元素也是他的朋友
-   5.当前对象所创建的对象
+ 迪米特法则的定义为一个软件实体应尽可能少地与其他实体发生相互作用。在此规则下，各个实体之间相互关联就很少了，能使系统遵循低耦合的规则。迪米特法则有一下几点规则，对于一个对象，其朋友包含一下几类:<br/>
+   1.当前对象本身(this)<br/>
+   2.以参数形式传入到当前方法中的对象<br/>
+   3.当前对象的成员对象<br/>
+   4.如果当前对象的成员对象是一个集合，那么集合内的元素也是他的朋友<br/>
+   5.当前对象所创建的对象<br/>
 ## 二.六个创建型模式
  ### 1.简单工厂模式
-  简单工厂模式不属于GOF23中设计模式，但是在软件开发应用中使用比较频繁。作为工厂模式的‘小弟’，我们有必要了解他。简单工厂模式包含以下角色:
-  1.抽象产品角色(Product)
-  2.具体产品角色(ConcreteProduct)
-  3.工厂类(Factory)
-  具体模型如下:
-  @startuml
-Title "简单工厂模式类关系图"
-abstract Product
-Product <|-- ConcreteProduct1
-Product <|-- ConcreteProduct2
-Factory <.. ConcreteProduct1
-Factory <.. ConcreteProduct2
-
-abstract class Product {
-+ public void display();
-}
-class ConcreteProduct1 {
-+ public void display();
-}
-class ConcreteProduct2 {
-+ public void display();
-}
-class Factory {
-+ public Product createProduct();
-}
-@enduml
-  
+  简单工厂模式不属于GOF23中设计模式，但是在软件开发应用中使用比较频繁。作为工厂模式的‘小弟’，我们有必要了解他。简单工厂模式包含以下角色:<br/>
+  1.抽象产品角色(Product)<br/>
+  2.具体产品角色(ConcreteProduct)<br/>
+  3.工厂类(Factory)<br/>
+  具体模型如下:<br/>
+  ![简单工厂模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LL1wlgxXQU_KfzkNFkrhUhPYuTCz_SytxdxQkldvvjrFP-zJuafCAYufIamkKGWeoayfJIxXWj8ADZMwkWhE-Nd9HQabgL11GxooHbnkG8FoYoeLRFJqCBGYIsBgHBWZEIUnk5W1PayrbxP2GMbIJcQoGbb-Pef2IcPnGKvYfOQcDLSj5rWfXaLaw34YHW_C_GYbS5S2pKg46mRHuv2QbmAC1W00)
