@@ -26,6 +26,8 @@ java设计模式学习以及个人理解
   简单工厂模式不属于GOF23中设计模式，但是在软件开发应用中使用比较频繁。作为工厂模式的‘小弟’，我们有必要了解他。简单工厂模式包含以下角色:<br/>
   1.抽象产品角色(Product)<br/>
   2.具体产品角色(ConcreteProduct)<br/>
-  3.工厂类(Factory)<br/>
+  3.工厂角色(Factory)<br/>
   具体模型如下:<br/>
-  ![简单工厂模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LL1wlgxXQU_KfzkNFkrhUhPYuTCz_SytxdxQkldvvjrFP-zJuafCAYufIamkKGWeoayfJIxXWj8ADZMwkWhE-Nd9HQabgL11GxooHbnkG8FoYoeLRFJqCBGYIsBgHBWZEIUnk5W1PayrbxP2GMbIJcQoGbb-Pef2IcPnGKvYfOQcDLSj5rWfXaLaw34YHW_C_GYbS5S2pKg46mRHuv2QbmAC1W00)
+  ![简单工厂模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LL1wlgxXQU_KfzkNFkrhUhPYuTCz_SytxdxQkldvvjrFP-zJuafCAYufIamkKGWeoayfJIxXWj8ADZMwkWhE-Nd9HQabgL11GxooHbnkG8FoYoeLRFJqCBGYIsBgHBWZEIUnk5W1PayrbxP2GMbIJcQoGbb-Pef2IcPnGKvYfOQcDLSj5rWfXaLaw34YHW_C_GYbS5S2pKg46mRHuv2QbmAC1W00)<br/>
+  优点:简单工厂方法将创建产品的细节隐藏，通过对工厂类传入一个参数，就能根据参数创建对应的产品。使得系统的扩展性很好，如果要加入一个新的产品，只要继承抽象产品角色，并在工厂类中设置参数，就可以了。<br/>
+  缺点:因为每次新增一个产品就需要修改工厂角色的代码，所以不符合
