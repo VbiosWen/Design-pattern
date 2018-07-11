@@ -14,6 +14,8 @@ public abstract class Product {
 
   private String productSign;
 
+  public abstract void display();
+
   public long getProductId() {
     return productId;
   }

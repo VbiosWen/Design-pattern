@@ -29,5 +29,6 @@ java设计模式学习以及个人理解
   3.工厂角色(Factory)<br/>
   具体模型如下:<br/>
   ![简单工厂模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LL1wlgxXQU_KfzkNFkrhUhPYuTCz_SytxdxQkldvvjrFP-zJuafCAYufIamkKGWeoayfJIxXWj8ADZMwkWhE-Nd9HQabgL11GxooHbnkG8FoYoeLRFJqCBGYIsBgHBWZEIUnk5W1PayrbxP2GMbIJcQoGbb-Pef2IcPnGKvYfOQcDLSj5rWfXaLaw34YHW_C_GYbS5S2pKg46mRHuv2QbmAC1W00)<br/>
-  优点:简单工厂方法将创建产品的细节隐藏，通过对工厂类传入一个参数，就能根据参数创建对应的产品。使得系统的扩展性很好，如果要加入一个新的产品，只要继承抽象产品角色，并在工厂类中设置参数，就可以了。<br/>
-  缺点:因为每次新增一个产品就需要修改工厂角色的代码，所以不符合
+  优点:简单工厂方法将创建产品的细节隐藏，通过对工厂类传入一个参数，就能根据参数创建对应的产品。使得系统的扩展性很好，如果要加入一个新的产品，只要继承抽象产品角色，并在工厂类中设置参数，就可以了。
+  实现了对象的使用和创建的分离，通过引入配置文件，可以帮助我们在不修改任何代码的情况下获取到不同的产品<br/>
+  缺点:因为每次新增一个产品就需要修改工厂角色的代码，所以不符合开闭原则。由于工厂类集合了所有的产品的创建过程，一旦工厂类无法使用，则整个系统就不能使用，工厂类与产品类的耦合度太高。<br/>

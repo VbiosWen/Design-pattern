@@ -8,6 +8,6 @@ package com.vbiso.basic.badsmell.dip;
  */
 public interface DBConnection<T> {
 
-  public T getConnection();
+   T getConnection();
 
 }
