@@ -1,5 +1,6 @@
 package com.vbiso.basic.utils;
 
+import com.vbiso.basic.badsmell.factory.factoryBean.ButtonFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.parsers.DocumentBuilder;
@@ -63,13 +64,10 @@ public class XmlUtil {
   }
 
 
-  public static Object getImageBean(){
+  public static Object getImageBean(String location){
     Object object=null;
     try {
-      DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
-      InputStream re = xmlUtil.getClass().getResourceAsStream("/imageType.xml");
-      DocumentBuilder documentBuilder = factory.newDocumentBuilder();
-      Document document = documentBuilder.parse(re);
+      Document document = getDocument(location);
       NodeList nodeList = document.getElementsByTagName("className");
       String trim=nodeList.item(0).getFirstChild().getNodeValue().trim();
       Class<?> aClass = Class.forName(trim);
@@ -78,6 +76,28 @@ public class XmlUtil {
       log.error("get xml object error",ex);
     }
     return object;
+  }
+
+  private static Document getDocument(String location)
+      throws ParserConfigurationException, IOException, SAXException {
+    InputStream resoureInput = xmlUtil.getClass().getResourceAsStream(location);
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    DocumentBuilder documentBuilder = factory.newDocumentBuilder();
+    Document document = documentBuilder.parse(resoureInput);
+    return document;
+  }
+
+  public static ButtonFactory getButtonFactory(String location) {
+    ButtonFactory buttonFactory=null;
+    try {
+      Document document = getDocument(location);
+      NodeList nodeList = document.getElementsByTagName("buttonFactory");
+      String trim = nodeList.item(0).getNodeValue().trim();
+      buttonFactory = (ButtonFactory) Class.forName(trim).newInstance();
+    } catch (ParserConfigurationException | IOException | SAXException | IllegalAccessException | InstantiationException | ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+    return buttonFactory;
   }
 
   public static void main(String[] args){

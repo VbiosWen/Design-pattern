@@ -11,7 +11,7 @@ import com.vbiso.basic.utils.XmlUtil;
 public class Client {
 
   public static void main(String[] args){
-    ImageFactory imageFactory = (ImageFactory) XmlUtil.getImageBean();
+    ImageFactory imageFactory = (ImageFactory) XmlUtil.getImageBean("/imageType.xml");
     Image image = imageFactory.createImage();
     image.readImage();
   }
