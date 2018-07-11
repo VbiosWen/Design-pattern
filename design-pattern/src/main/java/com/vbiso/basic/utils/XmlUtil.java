@@ -42,7 +42,7 @@ public class XmlUtil {
     return type;
   }
 
-  public static Object getBean(){
+  public static Object getBean() throws ClassNotFoundException {
     try {
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       InputStream re = xmlUtil.getClass().getResourceAsStream("/className.xml");
@@ -56,18 +56,28 @@ public class XmlUtil {
       return o;
     } catch (ParserConfigurationException e) {
       log.error("get xml object error :",e);
-    } catch (SAXException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
-    } catch (ClassNotFoundException e) {
-
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();
-    } catch (InstantiationException e) {
+    } catch (SAXException | IllegalAccessException | IOException | InstantiationException e) {
       e.printStackTrace();
     }
     return null;
+  }
+
+
+  public static Object getImageBean(){
+    Object object=null;
+    try {
+      DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
+      InputStream re = xmlUtil.getClass().getResourceAsStream("/imageType.xml");
+      DocumentBuilder documentBuilder = factory.newDocumentBuilder();
+      Document document = documentBuilder.parse(re);
+      NodeList nodeList = document.getElementsByTagName("className");
+      String trim=nodeList.item(0).getFirstChild().getNodeValue().trim();
+      Class<?> aClass = Class.forName(trim);
+      object= aClass.newInstance();
+    }catch (Exception ex){
+      log.error("get xml object error",ex);
+    }
+    return object;
   }
 
   public static void main(String[] args){

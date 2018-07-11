@@ -10,7 +10,7 @@ import com.vbiso.basic.utils.XmlUtil;
  */
 public class Client {
 
-  public static void main(String[] args){
+  public static void main(String[] args) throws ClassNotFoundException {
     LoggerFactory loggerFactory;
     loggerFactory= (LoggerFactory) XmlUtil.getBean();
     Logger logger = loggerFactory.createLogger();
