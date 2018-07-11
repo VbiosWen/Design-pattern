@@ -32,3 +32,13 @@ java设计模式学习以及个人理解
   优点:简单工厂方法将创建产品的细节隐藏，通过对工厂类传入一个参数，就能根据参数创建对应的产品。使得系统的扩展性很好，如果要加入一个新的产品，只要继承抽象产品角色，并在工厂类中设置参数，就可以了。
   实现了对象的使用和创建的分离，通过引入配置文件，可以帮助我们在不修改任何代码的情况下获取到不同的产品<br/>
   缺点:因为每次新增一个产品就需要修改工厂角色的代码，所以不符合开闭原则。由于工厂类集合了所有的产品的创建过程，一旦工厂类无法使用，则整个系统就不能使用，工厂类与产品类的耦合度太高。<br/>
+  ### 2.工厂模式
+  在简单工厂模式中，因为只有一个工厂类，导致整个系统的耦合度非常高，因此工厂模式就是为了解决这个问题。<br/>
+  在工厂模式中，通过定义一个抽象的工厂类，通过对产品进行分类，提供给不同的工厂类进行生产。<br/>
+  工厂模式主要包括以下角色:<br/>
+  1.抽象工厂角色(abstract factory)<br/>
+  2.具体工厂角色(factory)<br/>
+  3.抽象产品角色(abstract product)<br/>
+  4.具体产品角色(product)<br/>
+  模型图为:<br/>
+  ![工厂模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LNYwVUdJlgPdAnO-tTFFbPXKN5AKc5oYa9oJM5oi452KdrAQN88kx0PavXTLSd4vv-Sb5wMMf4BL6IhewTafe0l2LAE96s5JR0HJZCCb2jLSsWe5fKavcSaAS1Lb-Paf2YcPnGKvYPKQcjPSjLmGFHYkIwqeISrBWHk6C8jO8un8CG97g67n0TntGBiIuPRXymhKB9XpCCt6PQGLq9JIeZo5lDHo34Dn-feMjXa1RNC0cWPCY000)<br/>
