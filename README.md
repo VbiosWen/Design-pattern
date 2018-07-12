@@ -49,6 +49,16 @@ java设计模式学习以及个人理解
   缺点:<br/>
   1.在添加新产品的时候，不仅要添加新的产品类，还要添加具体的产品工厂类，类的个数成对增加，加大了系统的复杂度，增加了系统的开销。<br/>
   2.由于考虑到系统的扩展性，需要引入抽象层，在客户端代码中均使用抽象层定义，增加了系统的抽象度和理解难度。在实现中，还需要使用反射，DOM等手段，增加了系统的实现难度。
+ ### 3.抽象工厂模式
+  在工厂模式中，因为每一个产品就对应一个工厂类，导致了系统很大的开销，所以我们考虑使用抽象的思想，将产品进行分类，然后建立产品组的工厂，这样就节省了很多工厂类的开销。<br/>
+  抽象工厂模式主要包括以下角色：<br/>
+  1.抽象工厂角色(将工厂分类考虑)<br/>
+  2.具体工厂角色<br/>
+  3.抽象产品角色<br/>
+  4.具体产品角色<br/>
+  模型图为:<br/>
+  ![抽象工厂模式模型图](http://www.plantuml.com/plantuml/png/lTDB2i8m40RWVKunotPJQ9Okf8tWsYl4PCH2cqWozO5uTmFs0IrjLT1buFlddq2IUPAEwgfaSk_9IKMWIkazvCrnvwok5ULt1cTRQF17UubYzbZmOkJPoxNpKi0heT7BJSCa_pOf9Zl5Kf9_a2mCeJj8XR0DphfR8CgX96ptZEBLSFK14MCY-gqsrWJTuQOcXQ8wbLYX8V_dQlxJwlx99CbwwlAj4c-fdCyetisQLnaQ7NxE4m00)<br/>
+
 
 
 
