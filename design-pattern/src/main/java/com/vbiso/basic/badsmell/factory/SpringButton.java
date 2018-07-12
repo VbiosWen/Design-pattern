@@ -16,17 +16,4 @@ public class SpringButton implements Button {
     System.out.println("this is a spring button");
   }
 
-  /**
-   * @Author: wenliujie
-   * @Description:
-   * @Date: Created in 下午11:03 2018/7/11
-   * @Modified By:
-   */
-  public static class SpringTextField implements TextField {
-
-    @Override
-    public void textFieldFunction() {
-      System.out.println("this is a spring text field");
-    }
-  }
 }
