@@ -1,6 +1,6 @@
 package com.vbiso.basic.badsmell.factory.factoryBean.impl;
 
-import com.vbiso.basic.badsmell.factory.SpringButton.SpringTextField;
+import com.vbiso.basic.badsmell.factory.SpringTextField;
 import com.vbiso.basic.badsmell.factory.factoryBean.TextFieldFactory;
 import com.vbiso.basic.badsmell.factory.inter.TextField;
 

@@ -1,0 +1,57 @@
+//将下面代码复制到http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000，就能看到抽象工厂的结构
+@startuml
+Title 抽象工厂模式
+SpringButton ..> SpringSkinFactory
+SummerButton ..> SummerSkinFactory
+
+SpringComboBox ..> SpringSkinFactory
+SummerComboBox ..> SummerSkinFactory
+
+SpringTextField ..> SpringSkinFactory
+SummerTextField ..> SummerSkinFactory
+
+interface SkinFactory {
+ Button createButton():Button
+ ComboBox createComboBox():ComboBox
+ TextField createTextField():TextField
+}
+class SpringSkinFactory implements SkinFactory{
+ Button createButton():Button
+ ComboBox createComboBox():ComboBox
+ TextField createTextField():TextField
+}
+class SummerSkinFactory implements SkinFactory{
+ Button createButton():Button
+ ComboBox createComboBox():ComboBox
+ TextField createTextField():TextField
+}
+interface Button{
+ void buttonFunction()
+}
+class SummerButton implements Button{
+ void buttonFunciton()
+}
+
+class SpringButton implements Button{
+ void buttonFunction()
+}
+interface ComboBox{
+ void comboBoxFunction()
+}
+class SummerComboBox implements ComboBox{
+ void comboBoxFunction()
+}
+class SpringComboBox implements ComboBox{
+ void comboBoxFunction()
+}
+
+interface TextField{
+void textFieldFunction()
+}
+class SpringTextField implements TextField{
+void textFieldFunction()
+}
+class SummerTextField implements TextField{
+void textFieldFunction()
+}
+@enduml

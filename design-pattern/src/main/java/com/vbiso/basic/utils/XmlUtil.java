@@ -1,6 +1,7 @@
 package com.vbiso.basic.utils;
 
 import com.vbiso.basic.badsmell.factory.factoryBean.ButtonFactory;
+import com.vbiso.basic.refreshsmell.abstractFactory.SkinFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.parsers.DocumentBuilder;
@@ -8,6 +9,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import lombok.extern.slf4j.Slf4j;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -92,12 +94,26 @@ public class XmlUtil {
     try {
       Document document = getDocument(location);
       NodeList nodeList = document.getElementsByTagName("buttonFactory");
-      String trim = nodeList.item(0).getNodeValue().trim();
+      String trim = nodeList.item(0).getFirstChild().getNodeValue().trim();
       buttonFactory = (ButtonFactory) Class.forName(trim).newInstance();
     } catch (ParserConfigurationException | IOException | SAXException | IllegalAccessException | InstantiationException | ClassNotFoundException e) {
       e.printStackTrace();
     }
     return buttonFactory;
+  }
+
+  public static SkinFactory getSkinFactory(String location){
+    SkinFactory skinFactory=null;
+    try {
+      Document document = getDocument(location);
+      Element element = document.getDocumentElement();
+      NodeList refreshSmell = element.getElementsByTagName("refreshSmell");
+      String nodeValue = refreshSmell.item(0).getNodeValue();
+      skinFactory = (SkinFactory) Class.forName(nodeValue).newInstance();
+    } catch (ParserConfigurationException | IOException | SAXException | IllegalAccessException | InstantiationException | ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+    return skinFactory;
   }
 
   public static void main(String[] args){

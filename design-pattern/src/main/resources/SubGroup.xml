@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <config>
-  <buttonFactory>com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringButtonFactory</buttonFactory>
-  <comboBoxFactory>com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringComboBoxFactory</comboBoxFactory>
-  <textfieldFactory>com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringTextFieldFactory</textfieldFactory>
+  <badSmell>
+    <buttonFactory>com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringButtonFactory</buttonFactory>
+    <comboBoxFactory>com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringComboBoxFactory</comboBoxFactory>
+    <textfieldFactory>com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringTextFieldFactory</textfieldFactory>
+  </badSmell>
+  <refreshSmell>
+    <springFactory>com.vbiso.basic.refreshsmell.abstractFactory.SpringSkinFactory</springFactory>
+    <summerFactory>com.vbiso.basic.refreshsmell.abstractFactory.SummerSkinFactory</summerFactory>
+  </refreshSmell>
 </config>
