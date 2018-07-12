@@ -57,7 +57,7 @@ java设计模式学习以及个人理解
   3.抽象产品角色<br/>
   4.具体产品角色<br/>
   模型图为:<br/>
-  ![抽象工厂模式模型图](http://www.plantuml.com/plantuml/png/lTDB2i8m40RWVKunotPJQ9Okf8tWsYl4PCH2cqWozO5uTmFs0IrjLT1buFlddq2IUPAEwgfaSk_9IKMWIkazvCrnvwok5ULt1cTRQF17UubYzbZmOkJPoxNpKi0heT7BJSCa_pOf9Zl5Kf9_a2mCeJj8XR0DphfR8CgX96ptZEBLSFK14MCY-gqsrWJTuQOcXQ8wbLYX8V_dQlxJwlx99CbwwlAj4c-fdCyetisQLnaQ7NxE4m00)<br/>
+  ![抽象工厂模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LNZMjVV5neLFjozzsjVqRCN2ftlwkHAJYakA4fDB599p4ekB5HoXt82Y_9JIv1B7QYw5ilpC58NYZFno3KskMWBgdJ3KSq7KmSmpL4YjA4dDIy6qYP1E8t9rEk6qqucGJYCIT6RcbQGMfIKcfogu0TNb5rK2bIGNfIQMfCBSgQ5fXUvqD2LEc4gS4Avopiy3geOhXbfZg92PMv2JcfkQLr9CPwkDQ6er8idewTdXyZmNJ0DHgXoDyAWoWfk5NvK3C440inG0)<br/>
 
 
 
