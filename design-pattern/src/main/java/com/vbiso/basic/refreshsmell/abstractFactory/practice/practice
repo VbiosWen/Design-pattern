@@ -1,0 +1,59 @@
+@startuml
+Title 抽象工厂模式练习题
+interface InterfaceController{
+ void show();
+}
+
+interface OperationController{
+ void play();
+}
+
+class WindowsInterfaceController implements InterfaceController{
+ void show();
+}
+
+class WindowsOperationController implements OperationController{
+ void play();
+}
+
+class SymbianInterfaceController implements InterfaceController{
+ void show();
+}
+
+class SymbianOperationController implements OperationController{
+ void play();
+}
+
+class AndroidInterfaceController implements InterfaceController{
+ void show();
+}
+
+class AndroidOperationController implements OperationController{
+ void play();
+}
+abstract class SystemFactory{
+ abstract OperationController createOperationController();
+ abstract InterfaceController createInterfaceController();
+}
+
+class SymbianFactory extends SystemFactory{
+ OperationController createOperationController();
+ InterfaceController createInterfaceController();
+}
+
+class AndroidFactory extends SystemFactory{
+ OperationController createOperationController();
+ InterfaceController createInterfaceController();
+}
+class WindowsFactory extends SystemFactory{
+ OperationController createOperationController();
+ InterfaceController createInterfaceController();
+}
+
+WindowsInterfaceController ..> WindowsFactory
+WindowsOperationController ..> WindowsFactory
+SymbianInterfaceController ..> SymbianFactory
+SymbianOperationController ..> SymbianFactory
+AndroidInterfaceController ..> AndroidFactory
+AndroidOperationController ..> AndroidFactory
+@enduml
