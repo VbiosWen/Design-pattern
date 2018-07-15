@@ -60,7 +60,10 @@ java设计模式学习以及个人理解
   ![抽象工厂模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LNZMjVV5neLFjozzsjVqRCN2ftlwkHAJYakA4fDB599p4ekB5HoXt82Y_9JIv1B7QYw5ilpC58NYZFno3KskMWBgdJ3KSq7KmSmpL4YjA4dDIy6qYP1E8t9rEk6qqucGJYCIT6RcbQGMfIKcfogu0TNb5rK2bIGNfIQMfCBSgQ5fXUvqD2LEc4gS4Avopiy3geOhXbfZg92PMv2JcfkQLr9CPwkDQ6er8idewTdXyZmNJ0DHgXoDyAWoWfk5NvK3C440inG0)<br/>
   优点:抽象工厂模式相对于工厂模式，减少了工厂类的创建，通过将一个产品组的组成一个工厂类，减少每个小的零件都需要建立一个工厂的方式，大大减少了工厂类的创建。同时，抽象工厂模式在横向方向具有很好的扩展性，比如说我们需要新增加一个产品组，只需要实现抽象工厂类和抽象产品类就行了。<br/>
   缺点:在抽象工厂模式中如果我们需要在纵向加入了一个组件，比如在例子中我们可能需要新增一个输入框，这个时候我们就要修改抽象工厂，这就违背了设计模式的开闭原则，同时我们还需要修改每一个具体的工厂类，编码工作非常大，这样也就不符合设计模式的初衷了。所以在系统开发前，做好软件项目的设计非常重要。<br/>
-  
+ ### 4.单例模式
+  单例模式:在单例类的内部实现只生成一个实例，同时它提供一个静态的getInstance()工厂方法，让客户可以访问单一的一个实例；为了防止在外部对其实例化，需要将构造函数设计为私有函数，其内部提供一个singleton的静态对象，作为外部共享的唯一实例。<br/>
+  模型图：<br/>
+  ![单例模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuV99hAeCpinBpqajoSzJqDNDLq0LiShC0whDIqxbIiv9B2v6bRMnWJFjxAgv57GLge6AIpAJQr4DoK7csUQLvkHOWnIZADBG18ffAnIKvcGcmurHWD1eRifBBVU4kWgagvRB8JKl1UWP0000)<br/>
 
 
 
