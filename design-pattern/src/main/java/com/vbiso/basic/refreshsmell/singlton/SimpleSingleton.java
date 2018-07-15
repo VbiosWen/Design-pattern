@@ -2,7 +2,7 @@ package com.vbiso.basic.refreshsmell.singlton;
 
 /**
  * @Author: wenliujie
- * @Description: 饥汉模式 不用考虑线程安全，因为在编译时期，对象已经创建
+ * @Description: 饥汉模式 不用考虑线程安全，因为在编译时期，对象已经创建，但是这样会造成资源浪费。因为
  * @Date: Created in 下午5:35 2018/7/13
  * @Modified By:
  */

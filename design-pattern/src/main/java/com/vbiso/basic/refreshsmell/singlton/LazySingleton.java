@@ -14,7 +14,7 @@ public class LazySingleton {
   private static LazySingleton lazySingleton=null;
 
   private LazySingleton() {
-    throw new IllegalStateException();
+
   }
 
   public static LazySingleton newInstance(){
