@@ -1,4 +1,4 @@
-package com.vbiso.basic.refreshsmell.protoType;
+package com.vbiso.basic.refreshsmell.protoType.simple;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

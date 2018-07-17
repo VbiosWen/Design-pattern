@@ -1,11 +1,13 @@
 package com.vbiso.test.prototype;
 
-import com.vbiso.basic.refreshsmell.protoType.AttatchMent;
-import com.vbiso.basic.refreshsmell.protoType.ConcreProtoType1;
-import com.vbiso.basic.refreshsmell.protoType.ConcreteProtoType;
-import com.vbiso.basic.refreshsmell.protoType.ConcreteProtoType2;
-import com.vbiso.basic.refreshsmell.protoType.ConcreteProtoType3;
-import com.vbiso.basic.refreshsmell.protoType.ProtoType;
+import com.vbiso.basic.refreshsmell.protoType.complex.OfficialDocument;
+import com.vbiso.basic.refreshsmell.protoType.complex.ProtoTypeManager;
+import com.vbiso.basic.refreshsmell.protoType.simple.AttatchMent;
+import com.vbiso.basic.refreshsmell.protoType.simple.ConcreProtoType1;
+import com.vbiso.basic.refreshsmell.protoType.simple.ConcreteProtoType;
+import com.vbiso.basic.refreshsmell.protoType.simple.ConcreteProtoType2;
+import com.vbiso.basic.refreshsmell.protoType.simple.ConcreteProtoType3;
+import com.vbiso.basic.refreshsmell.protoType.simple.ProtoType;
 import com.vbiso.basic.refreshsmell.singlton.WeeklyLog;
 import java.io.IOException;
 import java.time.Instant;
@@ -83,6 +85,22 @@ public class ProtoTypeTest {
     ConcreteProtoType3 concreteProtoType3 = concreteProtoType.deepClone();
     System.out.println(concreteProtoType.hashCode()==concreteProtoType3.hashCode());
     System.out.println(concreteProtoType.getAttatchMent()==concreteProtoType3.getAttatchMent());
+  }
+
+  @Test
+  public void testProtoTypeManager(){
+    ProtoTypeManager protoTypeManager = ProtoTypeManager.getProtoTypeManager();
+    OfficialDocument doc1,doc2,doc3,doc4;
+    doc1=protoTypeManager.getOfficialDocument("far");
+    doc1.display();
+    doc2=protoTypeManager.getOfficialDocument("sar");
+    doc2.display();
+    doc3=protoTypeManager.getOfficialDocument("far");
+    doc3.display();
+    doc4=protoTypeManager.getOfficialDocument("sar");
+    doc4.display();
+    System.out.println(doc1==doc3);
+    System.out.println(doc2==doc4);
   }
 
 }
