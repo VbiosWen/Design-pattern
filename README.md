@@ -66,6 +66,8 @@ java设计模式学习以及个人理解
   ![单例模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuV99hAeCpinBpqajoSzJqDNDLq0LiShC0whDIqxbIiv9B2v6bRMnWJFjxAgv57GLge6AIpAJQr4DoK7csUQLvkHOWnIZADBG18ffAnIKvcGcmurHWD1eRifBBVU4kWgagvRB8JKl1UWP0000)<br/>
   单例模式适应情景:单例模式作为结构最简单的设计模式，在很多地方都有非常大的用处。比如说web框架常用的spring框架，其里面的bean生成方式默认就为单例模式，这样既节省了系统资源又能够提高效率。<br/>
   单例模式分为饱汉模式，懒汉模式和IoDH模式，饱汉模式是在jvm加载类的时候就会创建实例对象，优点是不用考虑线程安全问题，缺点是当前单例未使用情况下依然会占据系统资源。懒汉模式则是在需要的时候创建，但是在多线程情况下会出现创建多个实例对象的问题，解决办法是对创建过程加锁，虽然节省了资源，但是因为在线程创建时加锁，会导致系统性能下降很多，所以也不推荐使用。IoDH模式是使用java的代码特性，通过静态内部类的方式进行创建，因为静态内部类是在调用的使用才会编译，所以不用担心资源问题。同时jvm在加载类的时候又保证了线程安全，所以不用考虑会创建多个实例，是目前单例模式最好的解决办法。<br/>
+  ### 5.原型模式
+  ![原型模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LNZQD__flEvdAnO-tTFFbPbNabgKbfYSgX1Gb5-I7r9PaAgGMb6IcfTIhE2Sav-NcfYKarhDfQ2D99yC4jVGjEQgvKhEIIm6AipFIovABKc5Ap5KoCmjo4dDJSqhAOPhn66C5Lm4jtb6v9hd0FG8qES0)<br/>
 
 
 
