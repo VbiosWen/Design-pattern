@@ -67,7 +67,7 @@ java设计模式学习以及个人理解
   单例模式适应情景:单例模式作为结构最简单的设计模式，在很多地方都有非常大的用处。比如说web框架常用的spring框架，其里面的bean生成方式默认就为单例模式，这样既节省了系统资源又能够提高效率。<br/>
   单例模式分为饱汉模式，懒汉模式和IoDH模式，饱汉模式是在jvm加载类的时候就会创建实例对象，优点是不用考虑线程安全问题，缺点是当前单例未使用情况下依然会占据系统资源。懒汉模式则是在需要的时候创建，但是在多线程情况下会出现创建多个实例对象的问题，解决办法是对创建过程加锁，虽然节省了资源，但是因为在线程创建时加锁，会导致系统性能下降很多，所以也不推荐使用。IoDH模式是使用java的代码特性，通过静态内部类的方式进行创建，因为静态内部类是在调用的使用才会编译，所以不用担心资源问题。同时jvm在加载类的时候又保证了线程安全，所以不用考虑会创建多个实例，是目前单例模式最好的解决办法。<br/>
   ### 5.原型模式
-   原型模式:原型模式作为一种快速创建大量相同或者相似对象的方式,在软件开发中应用十分广泛,很多软件提供复制粘贴操作就是原型模式的典型应用。
+   原型模式:原型模式作为一种快速创建大量相同或者相似对象的方式,在软件开发中应用十分广泛,很多软件提供复制粘贴操作就是原型模式的典型应用。<br/>
   ![原型模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LNZQD__flEvdAnO-tTFFbPbNabgKbfYSgX1Gb5-I7r9PaAgGMb6IcfTIhE2Sav-NcfYKarhDfQ2D99yC4jVGjEQgvKhEIIm6AipFIovABKc5Ap5KoCmjo4dDJSqhAOPhn66C5Lm4jtb6v9hd0FG8qES0)<br/>
   优点:<br/>
    1.当创建新的实例较为复杂时，可以通过原型模式简化创建过程,通过复制一个已有实例达到快速创建的效果,节省了实例的创建效率,同时简化了代码。<br/>
@@ -80,6 +80,8 @@ java设计模式学习以及个人理解
   适用场景:
    1.当创建对象成本较大(当初始化需要大量的时间，或者创建时需要消耗很多的cpu资源或者网络资源时)<br/>
    2.系统需要保存对象的状态时，而对象的状态变化很小时，或者对象占用的内存很少时，可以使用原型模式配合备忘录模式进行使用<br/>
+   ### 6.建造者模式
+   ![建造者模式模型图](http://www.plantuml.com/plantuml/png/ZL51JiD03Bpx5PQuD4Bi0m989U41bU03QMALbTBToki04ehK2sU-03VU07od27v1owwXQeF4oPlnZ3DZZuDKBDsyXKihBU7gzULp-VYnl7z_VbgzFK0r3S9LBLYtLGXOTBPjYEy03t32lkdMdKMikQCRnKOPu25UUzlWTAEOL2nde-nu7oq6qJAX-eiPoS_aFBsW1z3-YJ796QIAndWyjqorU0Q0QB_qhcOIKXBT2hdcDzQWwpm5D84aGiQOR33ABhNuWrhkKyj8xTLgYhQsT25itGmNkiDjeDW1ukPqY2vW4-n8GqONnDyBLi9efvdbScM3IL-dgMuKWIHn_w_HCzNU1U5uHIRfsAdMR5yOe8SnkQQRjry0)<br/>
 
 
 
