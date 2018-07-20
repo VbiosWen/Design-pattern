@@ -1,9 +1,13 @@
 package com.vbiso.test.builderpatttern;
 
+import com.vbiso.basic.refreshsmell.BuilderPattern.example.Actor;
+import com.vbiso.basic.refreshsmell.BuilderPattern.example.ActorBuilder;
+import com.vbiso.basic.refreshsmell.BuilderPattern.example.ActorController;
 import com.vbiso.basic.refreshsmell.BuilderPattern.model.Builder;
 import com.vbiso.basic.refreshsmell.BuilderPattern.model.ConcreteBuilder;
 import com.vbiso.basic.refreshsmell.BuilderPattern.model.Director;
 import com.vbiso.basic.refreshsmell.BuilderPattern.model.Product;
+import com.vbiso.basic.utils.SingletonUtils;
 import org.junit.Test;
 
 /**
@@ -34,5 +38,13 @@ public class BuilderPatternTest {
   @Test
   public void testException(){
     throw new NullPointerException("wenliujie");
+  }
+
+  @Test
+  public void testExample(){
+    ActorBuilder builder= (ActorBuilder) SingletonUtils.getInstance("angelActorBuilder");
+    ActorController actorController=new ActorController();
+    Actor construct = actorController.construct(builder);
+    System.out.println(construct.toString());
   }
 }

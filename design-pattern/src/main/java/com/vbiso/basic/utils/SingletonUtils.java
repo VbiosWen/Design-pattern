@@ -33,8 +33,8 @@ public class SingletonUtils {
   public static Object getInstance(String beanName) {
     if (MapUtils.isEmpty(beanMap)) {
       buildBeanMap();
-      if (beanMap == null) {
-        throw new IllegalStateException();
+      if (MapUtils.isEmpty(beanMap)) {
+        throw new IllegalStateException("bean init failed!");
       }
       return beanMap.get(beanName);
     }
@@ -105,18 +105,18 @@ public class SingletonUtils {
 
   public static void main(String[] args) {
     Object angelActorBuilder = getInstance("angelActorBuilder");
-    AtomicInteger integer=new AtomicInteger(0);
-    Lock lock=new ReentrantLock();
-    for(int i=0;i<100;i++){
-      new Thread(()->{
+    AtomicInteger integer = new AtomicInteger(0);
+    Lock lock = new ReentrantLock();
+    for (int i = 0; i < 100; i++) {
+      new Thread(() -> {
         try {
           lock.lock();
           Object builder = getInstance("angelActorBuilder");
           System.out.println(builder.hashCode());
           System.out.println(integer.incrementAndGet());
-        }catch (Exception ex){
-          throw new RuntimeException("thread-"+integer+"error");
-        }finally {
+        } catch (Exception ex) {
+          throw new RuntimeException("thread-" + integer + "error");
+        } finally {
           lock.unlock();
         }
       }).start();
