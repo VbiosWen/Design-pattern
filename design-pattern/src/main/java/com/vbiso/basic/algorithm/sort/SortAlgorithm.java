@@ -11,6 +11,7 @@ import java.util.List;
  */
 public interface SortAlgorithm {
 
+  @SuppressWarnings("undchecked")
   <T extends Comparable<T>> T[] sort(T[] unsorted);
 
 

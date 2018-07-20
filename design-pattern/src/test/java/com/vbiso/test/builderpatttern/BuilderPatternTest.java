@@ -24,4 +24,15 @@ public class BuilderPatternTest {
 
   }
 
+  @Test
+  public void testStringFormat(){
+    String pattern="%s%s%s";
+    String format = String.format(pattern, "test", "vbiso","test","test");
+    System.out.println(format);
+  }
+
+  @Test
+  public void testException(){
+    throw new NullPointerException("wenliujie");
+  }
 }

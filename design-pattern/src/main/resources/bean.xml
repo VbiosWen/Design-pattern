@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+  <bean id="angelActorBuilder" class="com.vbiso.basic.refreshsmell.BuilderPattern.example.AngelBuilder"></bean>
+
+
+</beans>

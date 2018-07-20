@@ -4,10 +4,16 @@ import com.vbiso.basic.badsmell.factory.factoryBean.ButtonFactory;
 import com.vbiso.basic.refreshsmell.abstractFactory.SkinFactory;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Constructor;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import lombok.extern.slf4j.Slf4j;
+import org.dom4j.DocumentException;
+import org.dom4j.io.SAXReader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -24,6 +30,8 @@ import org.xml.sax.SAXException;
 public class XmlUtil {
 
   public static XmlUtil xmlUtil=new XmlUtil();
+
+  private static Map<String,Object> beanMap=new HashMap<>();
 
   public static String getType(){
     String type=null;
@@ -116,8 +124,46 @@ public class XmlUtil {
     return skinFactory;
   }
 
+  public static void buildBean(){
+    SAXReader saxReader=new SAXReader();
+    InputStream resourceAsStream = xmlUtil.getClass().getResourceAsStream("/test.xml");
+    try {
+      org.dom4j.Document document = saxReader.read(resourceAsStream);
+      org.dom4j.Element rootElement = document.getRootElement();
+      getNodes(rootElement);
+    } catch (DocumentException e) {
+      e.printStackTrace();
+    }
+  }
+
+  private static void getNodes(org.dom4j.Element rootElement) {
+    List<org.dom4j.Element> elements = rootElement.elements();
+    elements.forEach(element -> {
+      List<org.dom4j.Element> childNode = element.elements();
+      childNode.forEach(XmlUtil::invokeBean);
+    });
+
+  }
+
+  private static void invokeBean(org.dom4j.Element node) {
+    String key = node.getName();
+    String value = node.getStringValue();
+    try {
+      Class<?> aClass = Class.forName(value);
+      Constructor<?>[] constructor = aClass.getDeclaredConstructors();
+      List<org.dom4j.Element> elements = node.elements();
+      elements.forEach(element -> {
+        System.out.println(element.getName());
+        System.out.println(element.getStringValue());
+      });
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+  }
+
+
   public static void main(String[] args){
-    getType();
+    buildBean();
   }
 
 

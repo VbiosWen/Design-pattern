@@ -32,12 +32,12 @@ public class QuickSort implements SortAlgorithm {
 
   private static <T extends Comparable<T>> int partition(T[] array, int left, int right) {
     int mid=(left+right)/2;
-    T privot=array[mid];
+    T pivots=array[mid];
     while (left<=right){
-      while (less(array[left],privot)){
+      while (less(array[left],pivots)){
         left++;
       }
-      while (less(privot,array[right])){
+      while (less(pivots,array[right])){
         right--;
       }
       if(left<=right){
@@ -58,6 +58,8 @@ public class QuickSort implements SortAlgorithm {
     String[] str={"a","c","b","e","d"};
     sortAlgorithm.sort(str);
    // print(str);
+
+    //Map<Thread, StackTraceElement[]> allStackTraces = Thread.getAllStackTraces();
 
     List<Integer> list= Arrays.asList(1,23,53,3,5,4,5,14,144324,2);
     List<Integer> sortList = sortAlgorithm.sort(list);

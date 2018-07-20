@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+  <test>
+    <class id="test" class="com.vbiso.basic.utils.Test">
+      <constructor-arg>vbiso</constructor-arg>
+      <constructor-arg>hello</constructor-arg>
+    </class>
+  </test>
+</config>

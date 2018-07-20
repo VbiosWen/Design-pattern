@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <config>
   <badSmell>
-    <buttonFactory>com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringButtonFactory</buttonFactory>
+    <buttonFactory>
+      com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringButtonFactory
+      <constructor-arg>test</constructor-arg>
+      <constructor-arg>test</constructor-arg>
+    </buttonFactory>
     <comboBoxFactory>com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringComboBoxFactory</comboBoxFactory>
     <textfieldFactory>com.vbiso.basic.badsmell.factory.factoryBean.impl.SpringTextFieldFactory</textfieldFactory>
   </badSmell>
