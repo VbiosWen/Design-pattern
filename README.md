@@ -83,10 +83,10 @@ java设计模式学习以及个人理解
    ### 6.建造者模式<br/>
    建造者模式的定义:建造者模式将一个复杂对象的构建与它的表示分离，使得同样的构建过程构建不同的表示。建造者模式是一种对象创建型模式。<br/>
    建造者模式包含一下对象:<br/>
-   1.Builder(抽象建造者类) 目的为创建一个产品Product对象的各个部件指定抽象接口，在该接口中一般声明两类方法，一类方式是buildPartX()，它们用于创建对象的各个部件。另一个方法是getResult()，它们用于返回复杂对象。Builder既可以是抽象类又是接口。
+   1.Builder(抽象建造者类) 目的为创建一个产品Product对象的各个部件指定抽象接口，在该接口中一般声明两类方法，一类方式是buildPartX()，它们用于创建对象的各个部件。另一个方法是getResult()，它们用于返回复杂对象。Builder既可以是抽象类又是接口。<br/>
    2.ConcreteBuilder(具体建造者类) 具体建造者类通过继承或者实现抽象建造者类的接口，实现各个部件的具体构造和装配方法，定义并明确它所创建的对象，也可以提供一个方法返回创建好的复杂产品对象。<br/>
    3.Product(产品角色类) 它是被构建的复杂对象，包含多个组件，具体创建者创建该产品的内部表示并定义它的装配过程。<br/>
-   4.Director(指挥者类) 
+   4.Director(指挥者类) <br/>
    ![建造者模式模型图](http://www.plantuml.com/plantuml/png/ZL51JiD03Bpx5PQuD4Bi0m989U41bU03QMALbTBToki04ehK2sU-03VU07od27v1owwXQeF4oPlnZ3DZZuDKBDsyXKihBU7gzULp-VYnl7z_VbgzFK0r3S9LBLYtLGXOTBPjYEy03t32lkdMdKMikQCRnKOPu25UUzlWTAEOL2nde-nu7oq6qJAX-eiPoS_aFBsW1z3-YJ796QIAndWyjqorU0Q0QB_qhcOIKXBT2hdcDzQWwpm5D84aGiQOR33ABhNuWrhkKyj8xTLgYhQsT25itGmNkiDjeDW1ukPqY2vW4-n8GqONnDyBLi9efvdbScM3IL-dgMuKWIHn_w_HCzNU1U5uHIRfsAdMR5yOe8SnkQQRjry0)<br/>
    优点:<br/>
    1.在建造者模式中，开发者不必知道产品组装的具体细节，只需要通过传入具体的建造类，就能获取对应的产品。将产品本身与产品的创建进行拆解。<br/>
@@ -99,6 +99,7 @@ java设计模式学习以及个人理解
    1.需要创建的产品具有复杂的内部结构，通常包含多个成员属性。<br/>
    2.需要生成的产品对象属性相互依赖，需要指定其生成顺序。<br/>
    3.对象的创建过程独立于产品本身。在建造者引入指挥者角色，将创建过程封装在指挥者类中，而不在建造者类和客户端中。<br/>
+
 
 
 
