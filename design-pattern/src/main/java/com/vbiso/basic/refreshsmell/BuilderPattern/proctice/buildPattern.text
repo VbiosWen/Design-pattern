@@ -1,0 +1,52 @@
+@startuml
+Title "建造者模式"
+class Window{
+ - private String menu;
+
+ - private String mainWindow;
+
+ - private String videoList;
+
+ - private String controlStrip;
+
+ ... Omitting the gettersetter method
+}
+
+abstract class WindowsBuilder{
+ + {abstract} void buildMenu()
+ + {abstract} void buildMainwindow();
+ + {abstract} void buildVideoList();
+ + {abstract} void buildControlStrip();
+ + boolean isBuildMenu():return true;
+ + boolean isBuildVideoList(): return true;
+ + boolean isBuildControlStrip(): return true;
+ # Window window=new Window();
+ + Window construct():return window;
+}
+WindowsBuilder ..> Window
+
+class FullModeBuilder extends WindowsBuilder{
+ + void buildMenu():this.window.setMenu();
+ + void buildMainWindow():this.window.setMainwindow();
+ + void buildVideoList():this.window.setVideoList();
+ + void buildControlStrip():this.window.setControlStrip();
+}
+
+class StreamLinedModeBuilder extends WindowsBuilder{
+ + void buildMenu();
+ + void buildMainWindow():this.window.setMainWindow();
+ + void buildVideoList();
+ + void buildControlStrip():this.window.setControlStrip();
+ + boolean isBuildMenu():return false;
+ + boolean isBuildVideoList():return false;
+}
+
+class MemoryModeBuilder extends WindowsBuilder{
+ + void buildMenu()
+ + void buildMainWindow():this.window.setMainWindow();
+ + void buildVideoList():this.window.setVideoList();
+ + void buildControlStrip():this.windwo.setControlStrip();
+ + boolean isBuildMenu():return false;
+
+}
+@enduml

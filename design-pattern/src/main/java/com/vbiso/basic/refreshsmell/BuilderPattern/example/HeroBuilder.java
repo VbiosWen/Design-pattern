@@ -15,7 +15,7 @@ public class HeroBuilder extends ActorBuilder {
 
   @Override
   public void buildFace() {
-    actor.setType("hero is very handsome");
+    actor.setFace("hero is very handsome");
   }
 
   @Override
