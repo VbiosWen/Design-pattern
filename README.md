@@ -99,6 +99,15 @@ java设计模式学习以及个人理解
    1.需要创建的产品具有复杂的内部结构，通常包含多个成员属性。<br/>
    2.需要生成的产品对象属性相互依赖，需要指定其生成顺序。<br/>
    3.对象的创建过程独立于产品本身。在建造者引入指挥者角色，将创建过程封装在指挥者类中，而不在建造者类和客户端中。<br/>
+## 三.七个结构型模式
+  ### 1.适配器模式
+   适配器模式的定义为:将一个接口转换为客户希望的接口,使接口不兼容的哪些类能够共同工作,其别名为包装器(Wrapper)。适配器模式可以为类结构型模式，还可以作为对象结构型模式。<br/>
+   适配器包含以下角色:<br/>
+   1.target(目标抽象类):目标抽象类定义为客户端需要的接口，可以是抽象类或者接口，也可以是一个具体类。<br/>
+   2.adapter(适配器类):适配器可以作为一个转换器，调用另一个接口，对target和adaptee进行适配。<br/>
+   3.adpatee(适配者类):适配者类包含客户端需要的方法,在某些情况下可能没有适配者的源代码。<br/>
+   ![适配器模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LL1wsT3qihNtwSmLprOiVBgdNucBApEl9BKeBJ4vLI4aiIWzjQIQIq5ReIm_CqMXABMmDBMuH4FJcgkMYoiv9x6uMC4n9R40g5uXCxSW9pKtDQ-a6A5D5ogRgf08eQqnZRA2oUaL5wGcPwPb9WV1fD0jIKMu1AuMnKKmj-ZgrjZ1z41DSCx91BgD2q8fwEdPGLt9vP2Qbm8C3W00)<br/>
+
 
 
 
