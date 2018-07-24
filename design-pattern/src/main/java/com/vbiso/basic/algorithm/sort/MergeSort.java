@@ -1,7 +1,7 @@
 package com.vbiso.basic.algorithm.sort;
 
 import static com.vbiso.basic.algorithm.sort.SortUtils.less;
-import static com.vbiso.basic.algorithm.sort.SortUtils.print;
+import static com.vbiso.basic.algorithm.sort.SortUtils.println;
 
 /**
  * @Author: wenliujie
@@ -64,8 +64,8 @@ public class MergeSort implements SortAlgorithm {
     mergeSort.sort(arr);
     mergeSort.sort(doubles);
     mergeSort.sort(strings);
-    print(strings);
-    //print(doubles);
-    //print(arr);
+    SortUtils.println(strings);
+    //println(doubles);
+    //println(arr);
   }
 }

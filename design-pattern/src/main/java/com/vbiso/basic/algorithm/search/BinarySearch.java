@@ -10,8 +10,9 @@ public class BinarySearch implements SearchAlgorithm {
 
 
   @Override
-  public <T extends Comparable<T>> int search(T[] array, T data) {
-    return binarySearch(array, data, 0, array.length);
+  public <T extends Comparable<T>> int search(T[] array, T data, boolean isRecursive) {
+    return isRecursive ? binarySearchNoRecursive(array, data, 0, array.length)
+        : binarySearch(array, data, 0, array.length);
   }
 
   private <T extends Comparable<T>> int binarySearch(T[] array, T data, int left, int right) {
@@ -25,9 +26,31 @@ public class BinarySearch implements SearchAlgorithm {
     }
 
     if (comp > 0) {
-      return binarySearch(array, data, median+ 1, right);
+      return binarySearch(array, data, median + 1, right);
     }
 
+    return median;
+  }
+
+  private <T extends Comparable<T>> int binarySearchNoRecursive(T[] array, T data, int left,
+      int right) {
+    if (right < left) {
+      return -1;
+    }
+    int median = 0;
+    while (left < right) {
+      median = (left + right) >>> 1;
+      int comp = data.compareTo(array[median]);
+      if (comp < 0) {
+        right = median + 1;
+      }
+      if (comp > 0) {
+        left = median + 1;
+      }
+      if (comp == 0) {
+        break;
+      }
+    }
     return median;
   }
 

@@ -10,10 +10,10 @@ import java.util.List;
  */
 public interface SearchAlgorithm {
 
-  <T extends Comparable<T>> int search(T[] array, T data);
+  <T extends Comparable<T>> int search(T[] array, T data,boolean isRecursive);
 
-  default <T extends Comparable<T>> int search(List<T> array, T data) {
-    return search(array.toArray((T[]) new Comparable[array.size()]), data);
+  default <T extends Comparable<T>> int search(List<T> array, T data,boolean isRecursive) {
+    return search(array.toArray((T[]) new Comparable[array.size()]), data,isRecursive);
   }
 
 

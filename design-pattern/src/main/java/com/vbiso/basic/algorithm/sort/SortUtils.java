@@ -23,12 +23,21 @@ public class SortUtils {
 
   }
 
-  static <T extends Comparable<T>> void print(T[] array){
+  public static <T extends Comparable<T>> void println(T[] array){
     Arrays.stream(array).forEach(System.out::println);
   }
 
-  static <T extends Comparable<T>> void print(List<T> list){
-    list.forEach(System.out::println);
+  public static <T extends Comparable<T>> void println(List<T> list){
+     println(list.toArray(new Comparable[list.size()]));
+  }
+
+  public static <T extends Comparable<T>> void print(List<T> list){
+    print(list.toArray(new Comparable[list.size()]));
+  }
+
+  public static <T extends Comparable<T>> void print(T[] array){
+    Arrays.stream(array).forEach((T arr)-> System.out.print(arr+"\t"));
+    System.out.println("\n");
   }
 
   public static void main(String[] args){

@@ -110,14 +110,12 @@ public class SingletonUtils {
     for (int i = 0; i < 100; i++) {
       new Thread(() -> {
         try {
-          lock.lock();
           Object builder = getInstance("angelActorBuilder");
           System.out.println(builder.hashCode());
           System.out.println(integer.incrementAndGet());
         } catch (Exception ex) {
           throw new RuntimeException("thread-" + integer + "error");
         } finally {
-          lock.unlock();
         }
       }).start();
     }

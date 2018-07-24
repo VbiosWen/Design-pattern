@@ -1,7 +1,7 @@
 package com.vbiso.basic.algorithm.sort;
 
 import static com.vbiso.basic.algorithm.sort.SortUtils.less;
-import static com.vbiso.basic.algorithm.sort.SortUtils.print;
+import static com.vbiso.basic.algorithm.sort.SortUtils.println;
 import static com.vbiso.basic.algorithm.sort.SortUtils.swap;
 
 import java.util.Arrays;
@@ -53,17 +53,17 @@ public class QuickSort implements SortAlgorithm {
     Integer[] arrays={4,2,213,35,643,2,64632,1324,43214};
     SortAlgorithm sortAlgorithm=new QuickSort();
     sortAlgorithm.sort(arrays);
-//    print(arrays);
+//    println(arrays);
 
     String[] str={"a","c","b","e","d"};
     sortAlgorithm.sort(str);
-   // print(str);
+   // println(str);
 
     //Map<Thread, StackTraceElement[]> allStackTraces = Thread.getAllStackTraces();
 
     List<Integer> list= Arrays.asList(1,23,53,3,5,4,5,14,144324,2);
     List<Integer> sortList = sortAlgorithm.sort(list);
-    print(sortList
+    println(sortList
     );
   }
 
