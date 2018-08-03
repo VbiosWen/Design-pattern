@@ -21,6 +21,6 @@ public abstract class WindowAdapter implements WindowListener {
 
   @Override
   public void windowClosing(WindowEvent e) {
-    
+
   }
 }
