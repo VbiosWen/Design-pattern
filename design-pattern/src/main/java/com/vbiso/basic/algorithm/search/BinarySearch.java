@@ -35,7 +35,7 @@ public class BinarySearch implements SearchAlgorithm {
   private <T extends Comparable<T>> int binarySearchNoRecursive(T[] array, T data, int left,
       int right) {
     if (right < left) {
-      return -1;
+      throw new IllegalArgumentException(right+"<"+left);
     }
     int median = 0;
     while (left < right) {

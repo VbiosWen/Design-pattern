@@ -5,4 +5,6 @@
   <bean id="fullModeBuilder" class="com.vbiso.basic.refreshsmell.BuilderPattern.proctice.FullModeBuilder"></bean>
   <bean id="memoryModeBuilder" class="com.vbiso.basic.refreshsmell.BuilderPattern.proctice.MemoryModeBuilder"></bean>
   <bean id="scoreOperation" class="com.vbiso.basic.refreshsmell.adapter.example.OperationAdapter"></bean>
+  <bean id="jpgImg" class="com.vbiso.basic.refreshsmell.bridgeMode.JpgImg"></bean>
+  <bean id="windowsImp" class="com.vbiso.basic.refreshsmell.bridgeMode.WindowsImpl"></bean>
 </beans>

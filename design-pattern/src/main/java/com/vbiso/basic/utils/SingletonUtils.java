@@ -74,7 +74,7 @@ public class SingletonUtils {
     });
   }
 
-  public static class Single {
+  private static class Single {
 
     private static Object object = null;
 
@@ -93,7 +93,7 @@ public class SingletonUtils {
     }
   }
 
-  public static InputStream getBeanConfigFromXml() {
+  private static InputStream getBeanConfigFromXml() {
     InputStream inputStream = null;
     try {
       inputStream = SingletonUtils.class.getResourceAsStream(LOCALTiON);
