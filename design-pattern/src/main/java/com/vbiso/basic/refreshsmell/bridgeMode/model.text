@@ -1,0 +1,27 @@
+@startuml
+Title "桥接模式"
+
+Abstraction o-->Implementor
+
+abstract Abstraction{
+ + operation();
+}
+interface Implementor{
+ + operationImpl();
+}
+
+class ConcreteImplementorA implements Implementor{
+ + operationImpl(){};
+}
+
+class ConcreteImplementorB implements Implementor{
+ + operationImpl(){};
+}
+
+class RefinedAbstraction extends Abstraction{
+ + operation();
+}
+
+ client ..>Abstraction
+ client ..>Implementor
+@enduml
