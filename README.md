@@ -107,6 +107,16 @@ java设计模式学习以及个人理解
    2.adapter(适配器类):适配器可以作为一个转换器，调用另一个接口，对target和adaptee进行适配。<br/>
    3.adpatee(适配者类):适配者类包含客户端需要的方法,在某些情况下可能没有适配者的源代码。<br/>
    ![适配器模式模型图](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuGh9BCb9LL1wsT3qihNtwSmLprOiVBgdNucBApEl9BKeBJ4vLI4aiIWzjQIQIq5ReIm_CqMXABMmDBMuH4FJcgkMYoiv9x6uMC4n9R40g5uXCxSW9pKtDQ-a6A5D5ogRgf08eQqnZRA2oUaL5wGcPwPb9WV1fD0jIKMu1AuMnKKmj-ZgrjZ1z41DSCx91BgD2q8fwEdPGLt9vP2Qbm8C3W00)<br/>
+   优点:适配器模式主要解决两个模块之间互相不兼容的问题，比如模块A调用模块B的方法，但是模块A中所提供的参数只有A，但是在模块B中需要使用A,B,C三个参数。根据设计模式的开闭原则，我们不能修改A模块或者B模块中的方法，这个时候采用适配器模式将二者结合起来，就能很有效的解决不兼容的问题。<br/>
+   缺点：因为在java中使用的是单继承，所以无法适配多个适配者。<br/>
+  ### 2.桥接模式
+   如果软件中某个类存在两个独立变化的维度，通过该模式可以将两个维度分离出来，使二者独立扩展，让系统更加符合单一职责原则。与多层继承方案不同，它将两个独立变化的维度设计为两个独立的继承等级结构，并且在抽象层建立一个抽象关联，该关系类似于一个连接两个独立结构的桥，故名桥接模式。<br/>
+   在桥接模式结构图中包含如下几个角色：
+   Abstraction(抽象类):用于定义抽象类的接口，一般是抽象类而不是接口，其中定义了一个Implementor(实现类接口)类型的对象，并可以维护该对象，它与Implementor之间具有关联关系，即可以包含抽象业务方法，也可以包含具体的实现方法。<br/>
+   RefinedAbstraction(具体抽象类):扩充由Abstraction定义的接口，通常情况下不再是抽象类，而是具体类，实现了抽象类声明的抽象业务方法。在此类中可以调用Implementor定义的业务方法。<br/>
+   Implementor(实现类接口):定义实现类的接口，只提供基本操作，具体实现交给子类。<br/>
+   ConcreteRefinedImplementor(具体类接口):实现Implementor接口，在不同的具体类接口中提供不同的实现，运行时替换为父类对象，提供给抽象类具体的业务方法。<br/>
+   ![桥接模式](http://www.plantuml.com/plantuml/png/dP512i8m44NtSugXAqNQ2mYbrPLRyG8ndK8WJKeoWb1w1Jr35mKFuNNiEMnH8Muik9pyzz_Y9_Ci79yg3GV5cZ0QkdwuzCEjUzol4K1-zEo4P6KDsZXETrMjgIB3rW68TuW1rG2kqDRan7GjbcjeGHacLmf96DI_mIbumI2ry1wtraX7J44ZH_Kv_9ofQN-xDl-wzbGgGqMu2vsPJE7dLW2KMf5XJ98qGCFdSDriT8x_yWG0)
 
 
 
