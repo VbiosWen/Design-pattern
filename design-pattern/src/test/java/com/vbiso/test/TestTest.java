@@ -48,6 +48,11 @@ public class TestTest {
     System.out.println(s);
   }
 
+  @Test
+  public void testIntBig(){
+    int max=Integer.MAX_VALUE;
+    System.out.println(max);
+  }
 
 
 }
