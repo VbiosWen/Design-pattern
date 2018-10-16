@@ -13,9 +13,8 @@ import com.vbiso.basic.utils.XmlUtil;
  */
 public class Client {
 
-  private static String path="/SubGroup.xml";
-
   public static void main(String[] args){
+    String path = "/SubGroup.xml";
     SkinFactory skinFactory = XmlUtil.getSkinFactory(path);
     Button button = skinFactory.createButton();
     ComboBox comboBox = skinFactory.createComboBox();
