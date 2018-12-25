@@ -1,5 +1,6 @@
 package com.vbiso.basic.refreshsmell.decorated;
 
+import com.vbiso.basic.refreshsmell.decorated.example.BlackBorderDecorator;
 import com.vbiso.basic.refreshsmell.decorated.example.Component;
 import com.vbiso.basic.refreshsmell.decorated.example.ScrollBarDecorator;
 import com.vbiso.basic.refreshsmell.decorated.example.Window;
@@ -17,7 +18,8 @@ public class Client {
     Component component,componentSB;
     component=new Window();
     componentSB=new ScrollBarDecorator(component);
-    componentSB.display();
+    Component componentBB=new BlackBorderDecorator(componentSB);
+    componentBB.display();
   }
 
 }

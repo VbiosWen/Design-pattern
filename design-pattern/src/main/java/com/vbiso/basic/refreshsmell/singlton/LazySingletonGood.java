@@ -26,7 +26,7 @@ public class LazySingletonGood {
   }
 
   /**
-   * 双重锁定判断，因为当线程A，B 都判断到 singleton==null，然后线程锁定，还是会创建两个线程。
+   * 双重锁定判断，因为当线程A，B 都判断到 singleton==null，然后线程锁定，还是会创建两个对象。
    * @return
    */
   public static LazySingletonGood getSingleton(){
