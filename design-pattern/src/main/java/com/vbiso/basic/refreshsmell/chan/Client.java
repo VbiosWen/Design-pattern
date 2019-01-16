@@ -1,7 +1,6 @@
 package com.vbiso.basic.refreshsmell.chan;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 /**
  * @Author: wenliujie
@@ -12,11 +11,12 @@ import java.util.List;
 public class Client {
 
   public static void main(String[] args){
-    List<Handler> list=new ArrayList<>();
+    LinkedList<Handler> list=new LinkedList<>();
 
     list.add(new SimpleHandler1());
     list.add(new SimpleHandler2());
-    Chan chan=new SimpleChan(list.iterator());
+    Chan chan=new SimpleChan(list);
+    chan.handleRequest(new Object(),new Object());
     chan.handleRequest(new Object(),new Object());
   }
 

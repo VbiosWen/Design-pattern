@@ -10,4 +10,6 @@ public interface Chan {
 
   void handleRequest(Object request, Object response);
 
+  void revertHandle();
+
 }

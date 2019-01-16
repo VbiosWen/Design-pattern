@@ -1,6 +1,6 @@
 package com.vbiso.basic.refreshsmell.chan;
 
-import java.util.Iterator;
+import java.util.LinkedList;
 
 /**
  * @Author: wenliujie
@@ -10,18 +10,27 @@ import java.util.Iterator;
  */
 public class SimpleChan implements Chan {
 
-  private final Iterator<? extends Handler> chan;
+  //private final Iterator<? extends Handler> chan;
 
-  public SimpleChan(Iterator<? extends Handler> chan) {
+  private final LinkedList<? extends Handler> chan;
+
+  public SimpleChan(LinkedList<? extends Handler> chan) {
     this.chan = chan;
   }
 
   @Override
   public void handleRequest( final Object request, final Object response) {
-    if (chan.hasNext()){
-      chan.next().processRequest(request,response,this);
-      return;
+
+    if(chan.size()>0){
+      chan.removeFirst().processRequest(request,response,this);
     }
-    System.out.println("执行完毕");
+   // System.out.println("执行完毕");
   }
+
+  @Override
+  public void revertHandle() {
+
+  }
+
+
 }
