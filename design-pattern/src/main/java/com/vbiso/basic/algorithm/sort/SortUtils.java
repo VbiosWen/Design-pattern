@@ -20,19 +20,20 @@ public class SortUtils {
     T swap=array[v];
     array[v]=array[w];
     array[w]=swap;
-
   }
 
   public static <T extends Comparable<T>> void println(T[] array){
     Arrays.stream(array).forEach(System.out::println);
   }
 
+  @SuppressWarnings("unchecked")
   public static <T extends Comparable<T>> void println(List<T> list){
-     println(list.toArray(new Comparable[list.size()]));
+     println(list.toArray(new Comparable[0]));
   }
 
+  @SuppressWarnings("unchecked")
   public static <T extends Comparable<T>> void print(List<T> list){
-    print(list.toArray(new Comparable[list.size()]));
+    print(list.toArray(new Comparable[0]));
   }
 
   public static <T extends Comparable<T>> void print(T[] array){
