@@ -51,6 +51,17 @@ public class SinglyLinkedList {
     return count == 0;
   }
 
+  private class Node {
+
+    Object node;
+
+    Node next;
+
+    Node(Object node) {
+      this.node = node;
+    }
+  }
+
   public void display() {
     Node current = head;
     while (Objects.nonNull(current)) {
@@ -69,20 +80,8 @@ public class SinglyLinkedList {
     linkedList.display();
     linkedList.deleteHead();
     linkedList.display();
-    linkedList.insertNth(11,2);
+    linkedList.insertNth(11, 2);
     linkedList.display();
   }
 
-}
-
-class Node {
-
-
-  Object node;
-
-  Node next;
-
-  Node(Object node) {
-    this.node = node;
-  }
 }
